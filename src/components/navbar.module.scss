@@ -1,0 +1,34 @@
+nav{
+    border: 2px solid black;
+    background-color: gray;
+    min-height: 80px;
+    padding: 4px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo{
+    border: 2px solid black;
+}
+    .mobileMenu{
+        width: auto;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    .desktopMenuContainer{
+        display: flex;
+        // border: 2px solid black;
+        margin-right: 20px;
+        width: 50%;
+        .menuList{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .menuListitem{
+                color: white;
+            }
+        }
+    }
+}
