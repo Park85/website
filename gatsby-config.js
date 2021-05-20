@@ -14,9 +14,6 @@ module.exports = {
 			// },
 		},
 		{
-<<<<<<< HEAD
-			resolve: 'gatsby-plugin-google-fonts',
-=======
       		resolve: `gatsby-source-filesystem`,
       		options: {
         		name: `assets`,
@@ -24,33 +21,14 @@ module.exports = {
      	 },
    		},
 		{
-			resolve: 'gatsby-plugin-prefetch-google-fonts',
->>>>>>> 6201924... Designing Navbar
+			resolve: 'gatsby-plugin-google-fonts',
 			options: {
 				fonts: ['Poppins:300,400,500', 'Nunito:600,700'],
 				display: 'swap',
 			},
 		},
-<<<<<<< HEAD
-		// {
-		// 	resolve: 'gatsby-plugin-prefetch-google-fonts',
-		// 	options: {
-		// 		fonts: [
-		// 			{
-		// 				family: 'Poppins',
-		// 				variants: ['300', '400', '500'],
-		// 			},
-		// 			{
-		// 				family: 'Nunito',
-		// 				variants: ['600', '700'],
-		// 			},
-		// 		],
-		// 	},
-		// },
-=======
 		`gatsby-plugin-image`,
     	`gatsby-plugin-sharp`,
     	`gatsby-transformer-sharp`,
->>>>>>> 6201924... Designing Navbar
 	],
 };
