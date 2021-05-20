@@ -1,6 +1,13 @@
 import React from "react"
 import Layout from '../components/Layout'
+import Intro from '../components/About/Intro'
 const About = () => {
-  return <Layout>This is about page!yipee</Layout>
+  return (
+    <Layout>
+      <div>
+        <Intro/>
+      </div>
+    </Layout>
+  )
 }
  export default About;
