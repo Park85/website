@@ -7,6 +7,7 @@ const Footer = () => {
 		<footer>
 			<div className={'bounding-box'}>
 				<div className={styles.row}>
+					{/* About us Section */}
 					<div className={styles.about}>
 						<h2>About Us</h2>
 						<p>
@@ -14,6 +15,8 @@ const Footer = () => {
 							get into a place you love. So let’s do this, together.
 						</p>
 					</div>
+
+					{/* Quick Links */}
 					<div className={styles.links}>
 						<h2>Quick Links</h2>
 						<ul>
@@ -40,6 +43,8 @@ const Footer = () => {
 							</li>
 						</ul>
 					</div>
+
+					{/* Contact Section */}
 					<div className={styles.contact}>
 						<h2>Contact Us</h2>
 						<ul>
@@ -53,15 +58,17 @@ const Footer = () => {
 								<p>Kolkata - 40</p>
 							</li>
 							<li>
-								<a href='mailto:abc@example.com'>info@arti.com</a>
+								<a href='mailto:abc@example.com'>info@arti.in</a>
 							</li>
 							<li>
 								<a href='tel:+91 9191919191'>+91-9191919191</a>
 							</li>
 						</ul>
 					</div>
+
+					{/* Social Media Icons */}
 					<div className={styles.social}>
-						<h2>Follow Us</h2>
+						<h2>Social</h2>
 						<ul>
 							<li>
 								<a href='#'>
@@ -86,7 +93,6 @@ const Footer = () => {
 						</ul>
 					</div>
 				</div>
-				{/* <h1 className={styles.header}>Hello World</h1> */}
 			</div>
 		</footer>
 	);
