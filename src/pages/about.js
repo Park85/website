@@ -4,7 +4,7 @@ import Intro from '../components/About/Intro'
 const About = () => {
   return (
     <Layout>
-      <div>
+      <div className={'bounding-box'}>
         <Intro/>
       </div>
     </Layout>

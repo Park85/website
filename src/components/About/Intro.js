@@ -9,7 +9,7 @@ const Intro = ()=>{
     return(
         <>
             <section className={styles.aboutSectionContainer}>
-                <h1>Our Mission Is To Find House</h1>
+                <h1>Atri Groups<br />Setting a benchmark in Garia</h1>
 
                 {/* About us description */}
                     <div className={styles.aboutDescDiv}>
@@ -23,26 +23,25 @@ const Intro = ()=>{
                         <div className={styles.iconItem}>
                             <div className={styles.icon}><AiOutlineUser size={40}/></div>
                             <div>
-                                <h2>80123 +</h2>
-                                <h3>Customers to date</h3>
+                                <h2>2000 +</h2>
+                                <h3>Happy customers</h3>
                             </div>
                         </div>
-
                         <div className={styles.iconItem}>
                             <div className={styles.icon}><AiOutlineHome size={40}/></div>
                             <div>
-                                <h2>80123 +</h2>
-                                <h3>Customers to date</h3>
+                                <h2>10 +</h2>
+                                <h3>Projects completed</h3>
+                            </div>
+                        </div>
+                        <div className={styles.iconItem}>
+                            <div className={styles.icon}><AiOutlineSafetyCertificate size={40}/></div>
+                            <div>
+                                <h2>30 +</h2>
+                                <h3>Years of building Trust</h3>
                             </div>
                         </div>
 
-                        <div className={styles.iconItem}>
-                            <div className={styles.icon} ><AiOutlineSafetyCertificate size={40}/></div>
-                            <div>
-                                <h2>80123 +</h2>
-                                <h3>Customers to date</h3>
-                            </div>
-                        </div>
                     </div>
 
                     {/* Image section */}
@@ -50,6 +49,9 @@ const Intro = ()=>{
                         {/* <div className={styles.imageContainer}>
                             <StaticImage src="../../assets/home_1.png" alt="abouthome" height={500} />
                         </div> */}
+                        <div className={styles.imageContainer}>
+                        <p>This will be an image</p>
+                    </div>
             </section>
         </>
     )
