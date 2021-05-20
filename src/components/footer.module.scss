@@ -3,23 +3,42 @@ footer {
 	background-color: #24324a;
 	display: flex;
 	justify-content: center;
-	padding: 4.5em 0;
+	// padding: 4.5em 0;
+	padding: 3em 0;
 
+	// Bounding Box
 	.row {
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
 
-		div {
-			width: 25%;
-			padding: 1em;
+		// All Links Inside The Footer
+		a {
+			color: #8a99b3;
+			font-size: 0.9rem;
+			transition: all 200ms ease-in-out;
+		}
 
+		// All divs inside the footer
+		div {
+			// width: 25%;
+			// padding: 1em;
+			padding: 1.2em;
+			display: flex;
+			flex-direction: column;
+			// border: 1px solid;
+
+			// All headings(h2) inside the footer
 			h2 {
 				font-family: 'Nunito';
 				color: white;
 				font-size: 1.2rem;
 				margin-bottom: 1.4em;
 			}
+		}
 
+		// About Class styles
+		.about {
 			p {
 				color: #8a99b3;
 				font-size: 0.9rem;
@@ -27,12 +46,42 @@ footer {
 			}
 		}
 
-		.links {
-			display: flex;
-			flex-direction: column;
+		// Links and contact class styles
+		.links,
+		.contact {
+			li {
+				// border: 1px solid black;
+				p {
+					color: #8a99b3;
+					font-size: 0.9rem;
+				}
+				a {
+					color: #8a99b3;
+					font-size: 0.9rem;
+					transition: all 200ms ease-in-out;
+				}
+				a:hover {
+					color: white;
+					transform: translateX(100px);
+				}
+			}
 
-			a {
+			li:not(:last-child) {
 				margin-bottom: 1em;
+			}
+		}
+
+		// Social class styles
+		.social {
+			ul {
+				display: flex;
+				margin-left: 0.5em;
+				li {
+					margin-right: 1.4em;
+					a {
+						font-size: 1.3em;
+					}
+				}
 			}
 		}
 	}
