@@ -24,13 +24,13 @@ const Footer = () => {
 								<Link to='#'>Careers</Link>
 							</li>
 							<li>
-								<Link to='#'>About Us</Link>
+								<Link to='#'>Terms and Conditions</Link>
 							</li>
 							<li>
 								<Link to='#'>About Us</Link>
 							</li>
 							<li>
-								<Link to='#'>About Us</Link>
+								<Link to='#'>Terms and Conditions</Link>
 							</li>
 							<li>
 								<Link to='#'>About Us</Link>
@@ -44,10 +44,10 @@ const Footer = () => {
 						<h2>Contact Us</h2>
 						<ul>
 							<li>
-								<p>ABC Road</p>
+								<p>Lorem, ipsum dolor.</p>
 							</li>
 							<li>
-								<p>ABC Area</p>
+								<p>Lorem, ipsum.</p>
 							</li>
 							<li>
 								<p>Kolkata - 40</p>

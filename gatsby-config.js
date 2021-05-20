@@ -9,21 +9,31 @@ module.exports = {
 	plugins: [
 		{
 			resolve: 'gatsby-plugin-sass',
+			// options: {
+			// 	data: '@import `${__dirname}/src/styles/styles`',
+			// },
 		},
 		{
-			resolve: 'gatsby-plugin-prefetch-google-fonts',
+			resolve: 'gatsby-plugin-google-fonts',
 			options: {
-				fonts: [
-					{
-						family: 'Poppins',
-						variants: ['300', '400', '500'],
-					},
-					{
-						family: 'Nunito',
-						variants: ['600', '700'],
-					},
-				],
+				fonts: ['Poppins:300,400,500', 'Nunito:600,700'],
+				display: 'swap',
 			},
 		},
+		// {
+		// 	resolve: 'gatsby-plugin-prefetch-google-fonts',
+		// 	options: {
+		// 		fonts: [
+		// 			{
+		// 				family: 'Poppins',
+		// 				variants: ['300', '400', '500'],
+		// 			},
+		// 			{
+		// 				family: 'Nunito',
+		// 				variants: ['600', '700'],
+		// 			},
+		// 		],
+		// 	},
+		// },
 	],
 };

@@ -1,9 +1,11 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
 footer {
 	width: 100%;
-	background-color: #24324a;
+	background-color: $footer-bg;
 	display: flex;
 	justify-content: center;
-	// padding: 4.5em 0;
 	padding: 3em 0;
 
 	// Bounding Box
@@ -12,21 +14,39 @@ footer {
 		flex-direction: column;
 		justify-content: space-between;
 
+		@include min-width(625px) {
+			display: grid;
+			grid-template-columns: 50% 50%;
+			grid-template-rows: auto auto;
+			grid-template-areas:
+				'about social'
+				'links contact';
+			padding: 0 3em;
+		}
+		@include min-width(910px) {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 0em;
+		}
+
 		// All Links Inside The Footer
 		a {
-			color: #8a99b3;
+			color: $footer-text;
 			font-size: 0.9rem;
 			transition: all 200ms ease-in-out;
 		}
 
 		// All divs inside the footer
 		div {
-			// width: 25%;
-			// padding: 1em;
 			padding: 1.2em;
 			display: flex;
 			flex-direction: column;
 			// border: 1px solid;
+			@include min-width(910px) {
+				width: 25%;
+				padding: 1em;
+			}
 
 			// All headings(h2) inside the footer
 			h2 {
@@ -39,8 +59,10 @@ footer {
 
 		// About Class styles
 		.about {
+			grid-area: about;
+
 			p {
-				color: #8a99b3;
+				color: $footer-text;
 				font-size: 0.9rem;
 				line-height: 2em;
 			}
@@ -52,11 +74,11 @@ footer {
 			li {
 				// border: 1px solid black;
 				p {
-					color: #8a99b3;
+					color: $footer-text;
 					font-size: 0.9rem;
 				}
 				a {
-					color: #8a99b3;
+					color: $footer-text;
 					font-size: 0.9rem;
 					transition: all 200ms ease-in-out;
 				}
@@ -71,8 +93,24 @@ footer {
 			}
 		}
 
+		.links {
+			grid-area: links;
+			@include min-width(1140px) {
+				padding-left: 6em;
+			}
+		}
+
+		.contact {
+			grid-area: contact;
+			@include min-width(1140px) {
+				padding-left: 6em;
+			}
+		}
+
 		// Social class styles
 		.social {
+			grid-area: social;
+
 			ul {
 				display: flex;
 				margin-left: 0.5em;
