@@ -1,0 +1,25 @@
+@import 'variables';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+body {
+	font-family: $poppins;
+}
+
+.bounding-box {
+	max-width: 1170px;
+}

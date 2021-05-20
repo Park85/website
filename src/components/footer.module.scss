@@ -1,0 +1,39 @@
+footer {
+	width: 100%;
+	background-color: #24324a;
+	display: flex;
+	justify-content: center;
+	padding: 4.5em 0;
+
+	.row {
+		display: flex;
+		justify-content: space-between;
+
+		div {
+			width: 25%;
+			padding: 1em;
+
+			h2 {
+				font-family: 'Nunito';
+				color: white;
+				font-size: 1.2rem;
+				margin-bottom: 1.4em;
+			}
+
+			p {
+				color: #8a99b3;
+				font-size: 0.9rem;
+				line-height: 2em;
+			}
+		}
+
+		.links {
+			display: flex;
+			flex-direction: column;
+
+			a {
+				margin-bottom: 1em;
+			}
+		}
+	}
+}
