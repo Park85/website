@@ -1,14 +1,16 @@
-import React from 'react';
-import Footer from './Footer';
-import '../styles/globals.scss';
+import React from 'react'
+import Nav from './Navbar'
+import Footer from './Footer'
+import '../styles/globals.scss'
 
-const Layout = props => {
-	return (
-		<>
-			{props.children}
-			<Footer />
-		</>
-	);
-};
+const Layout = ({children})=>{
+    return(
+        <>
+            <Nav/>
+                {children}
+            <Footer/>
+        </>
+    )
+}
 
 export default Layout;
