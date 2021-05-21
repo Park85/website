@@ -19,7 +19,7 @@ const Intro = () => {
 				<div className={styles.aboutDescDiv}>
 					<p>
 						Atri Group has been into Construction and Development of Real Estate
-						since 1982 and has built a niche in the market with its{' '}
+						since 1982 and has built a niche in the market with its
 						<strong> Quality Performance and On-time Delivery.</strong>
 					</p>
 					<p>
@@ -33,9 +33,8 @@ const Intro = () => {
 					<p>
 						Atri has indeed set a benchmark in Garia area of South Kolkata with
 						its landmark properties and housing complexes portraying
-						well-planned architecture,{' '}
+						well-planned architecture,
 						<strong>
-							{' '}
 							high-end specifications and world class amenities, ensuring the
 							most fulfilling lives to their occupant at affordable prices.
 						</strong>
