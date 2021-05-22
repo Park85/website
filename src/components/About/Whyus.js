@@ -5,7 +5,7 @@ import {AiOutlineSafetyCertificate} from 'react-icons/ai';
 import * as styles from './whyus.module.scss';
 const Whyus = () => {
 	return (
-		<section>
+		<section className={styles.whyus}>
 			{/* Header */}
 			<div className={styles.header}>
 				<h3>Why Choose Atri</h3>

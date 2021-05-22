@@ -2,98 +2,98 @@
 @import '../../styles/mixins';
 
 .aboutSectionContainer {
-	// border: 2px solid green;
-	@include min-width(768px) {
-		padding: 3.5em 2em;
-	}
-	@include min-width(990px) {
-		display: grid;
-		grid-template-rows: auto auto auto;
-		grid-template-columns: 1fr 1fr;
-		column-gap: 40px;
-	}
-	padding: 3.5em 1.4em;
+  // border: 2px solid green;
+  @include min-width(768px) {
+    padding: 3.5em 2em;
+  }
+  @include min-width(990px) {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+  }
+  padding: 3.5em 1.4em;
 
-	h1 {
-		// border: 2px solid green;
-		text-align: center;
-		width: 90%;
-		font-family: $nunito;
-		font-size: 1.9rem;
-		color: $header;
-		margin: 0em auto 1.5em auto;
-		@include min-width(990px) {
-			grid-column: 1/-1;
-		}
-	}
+  h1 {
+    // border: 2px solid green;
+    text-align: center;
+    width: 90%;
+    font-family: $nunito;
+    font-size: 1.9rem;
+    color: $header;
+    margin: 0em auto 1.5em auto;
+    @include min-width(990px) {
+      grid-column: 1/-1;
+    }
+  }
 
-	.aboutDescDiv {
-		// border: 2px solid blue;
-		// width: 40%;
-		@include min-width(768px) {
-			width: 100%;
-			font-size: 1.1rem;
-		}
-		p {
-			@include min-width(768px) {
-				font-size: 1rem;
-			}
-			font-size: 0.9rem;
-			color: $text;
-			margin-bottom: 2.5em;
-		}
-	}
+  .aboutDescDiv {
+    // border: 2px solid blue;
+    // width: 40%;
+    @include min-width(768px) {
+      width: 100%;
+      font-size: 1.1rem;
+    }
+    p {
+      @include min-width(768px) {
+        font-size: 1rem;
+      }
+      font-size: 0.9rem;
+      color: $text;
+      margin-bottom: 2.5em;
+    }
+  }
 
-	.iconContainer {
-		// border: 2px solid magenta;
-		width: 100%;
-		@include min-width(768px) {
-			display: flex;
-			justify-content: space-around;
-		}
-		@include min-width(990px) {
-			display: flex;
-			justify-content: space-around;
-			grid-column-start: 1;
-		}
-		.iconItem {
-			// border: 2px solid orange;
-			display: flex;
-			align-items: center;
-			font-family: $nunito;
-			margin-bottom: 2em;
-			@include min-width(990px) {
-				width: 30%;
-			}
-			.icon {
-				margin-right: 0.8em;
-				color: $primary-color;
-			}
-			h2 {
-				color: $header;
-				@include min-width(990px) {
-					font-size: 1.2rem;
-				}
-			}
-			h3 {
-				color: $text;
-				@include min-width(990px) {
-					font-size: 0.8rem;
-				}
-			}
-		}
-	}
+  .iconContainer {
+    // border: 2px solid magenta;
+    width: 100%;
+    @include min-width(768px) {
+      display: flex;
+      justify-content: space-around;
+    }
+    @include min-width(990px) {
+      display: flex;
+      justify-content: space-around;
+      grid-column-start: 1;
+    }
+    .iconItem {
+      // border: 2px solid orange;
+      display: flex;
+      align-items: center;
+      font-family: $nunito;
+      margin-bottom: 2em;
+      @include min-width(990px) {
+        width: 30%;
+      }
+      .icon {
+        margin-right: 0.8em;
+        color: $primary-color;
+      }
+      h2 {
+        color: $header;
+        @include min-width(990px) {
+          font-size: 1.2rem;
+        }
+      }
+      h3 {
+        color: $text;
+        @include min-width(990px) {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
 
-	.imageContainer {
-		border: 2px solid red;
-		// font-size: 5rem;
+  .imageContainer {
+    border: 2px solid red;
+    // font-size: 5rem;
 
-		@include min-width(768px) {
-			width: 100%;
-		}
-		@include min-width(990px) {
-			grid-column-start: 2;
-			grid-row: 2/3;
-		}
-	}
+    @include min-width(768px) {
+      width: 100%;
+    }
+    @include min-width(990px) {
+      grid-column-start: 2;
+      grid-row: 2/3;
+    }
+  }
 }
