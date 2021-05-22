@@ -2,73 +2,98 @@
 @import '../../styles/mixins';
 
 .testimonialContainer {
-  //   border: 2px solid black;
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
+	// border: 2px solid black;
+	max-width: 1000px;
+	margin: 0 auto 3em auto;
 
-  h1 {
-    text-align: center;
-    width: 90%;
-    font-family: $nunito;
-    font-size: 1.9rem;
-    color: $header;
-    margin: 0em auto 1.5em auto;
-  }
+	h1 {
+		text-align: center;
+		width: 90%;
+		font-family: $nunito;
+		font-size: 1.9rem;
+		color: $header;
+		margin: 0em auto 1em auto;
+	}
 
-  .sliderWrapper {
-    width: 80%;
-    margin: 0 auto 50px auto;
-    // border: 2px solid black;
+	.sliderWrapper {
+		width: 80%;
+		height: 100%;
+		margin: 0 auto 50px auto;
+		// border: 2px solid black;
 
-    .sliderItemDiv {
-      border: 1px solid #dbdbdb;
-      border-radius: 5px;
+		.itemWrapper {
+			// border: 1px solid #dbdbdb;
+			padding: 0 5px;
+			// overflow: hidden;
+			@include min-width(1000px) {
+				padding: 0 20px;
+			}
 
-      .testImage {
-        // border: 2px solid red;
-        border-radius: 5px 5px 0 0;
-        width: 100%;
-        height: 100px;
-        background-color: grey;
-      }
+			.item {
+				border: 1px solid #dbdbdb;
+				border-radius: 5px;
+				height: 420px;
+				.testImage {
+					// border: 2px solid red;
+					border-radius: 5px 5px 0 0;
+					width: 100%;
+					height: 100px;
+					background-color: grey;
+				}
 
-      .testDesc {
-        // border: 2px solid green;
-        padding: 25px;
-        position: relative;
+				.testDesc {
+					// border: 2px solid green;
+					padding: 25px 18px;
+					@include min-width(1000px) {
+						padding: 25px 25px;
+					}
+					position: relative;
 
-        .quoteIcon {
-          width: 50px;
-          height: 50px;
-          border-radius: 100%;
-          background: linear-gradient(to right, #fdc830, #f37335);
-          position: absolute;
-          top: -28px;
-          left: 11px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: white;
-        }
+					.quoteIcon {
+						width: 50px;
+						height: 50px;
+						border-radius: 100%;
+						background: linear-gradient(to right, #fdc830, #f37335);
+						position: absolute;
+						top: -28px;
+						left: 11px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						color: white;
+					}
 
-        h3 {
-          font-size: 1.4rem;
-          font-family: $nunito;
-          opacity: 0.9;
-          text-align: center;
-        }
-        h4 {
-          font-size: 0.9rem;
-          opacity: 0.6;
-          font-weight: 500;
-          text-align: center;
-          margin-bottom: 10px;
-        }
-        p {
-          font-size: 0.7rem;
-        }
-      }
-    }
-  }
+					h3 {
+						font-size: 1.4rem;
+						font-family: $nunito;
+						opacity: 0.9;
+						text-align: center;
+					}
+					h4 {
+						font-size: 0.9rem;
+						opacity: 0.6;
+						font-weight: 500;
+						text-align: center;
+						margin-bottom: 1.5em;
+					}
+					p {
+						font-size: 0.9rem;
+						line-height: 25px;
+						max-height: 200px;
+						margin: 0;
+						-webkit-box-orient: vertical;
+						display: block;
+						display: -webkit-box;
+						overflow: hidden !important;
+						text-overflow: ellipsis;
+						-webkit-line-clamp: 8;
+						overflow: hidden;
+						@include min-width(480px) {
+							font-size: 1rem;
+						}
+					}
+				}
+			}
+		}
+	}
 }
