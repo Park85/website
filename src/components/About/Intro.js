@@ -9,14 +9,22 @@ const Intro = () => {
 	return (
 		<>
 			<section className={styles.aboutSectionContainer}>
-				<h1>
+				<h1
+					data-sal='slide-right'
+					data-sal-duration='1000'
+					data-sal-easing='easeInCubic'>
 					Atri Groups
 					<br />
 					Setting a benchmark in Garia
 				</h1>
 
 				{/* About us description */}
-				<div className={styles.aboutDescDiv}>
+				<div
+					className={styles.aboutDescDiv}
+					data-sal='slide-up'
+					data-sal-duration='1000'
+					data-sal-delay='400'
+					data-sal-easing='easeInCubic'>
 					<p>
 						Atri Group has been into Construction and Development of Real Estate
 						since 1982 and has built a niche in the market with its
@@ -42,7 +50,12 @@ const Intro = () => {
 				</div>
 
 				{/* Icon section */}
-				<div className={styles.iconContainer}>
+				<div
+					className={styles.iconContainer}
+					data-sal='slide-up'
+					data-sal-duration='1000'
+					data-sal-delay='800'
+					data-sal-easing='easeInCubic'>
 					<div className={styles.iconItem}>
 						<div className={styles.icon}>
 							<AiOutlineUser size={40} />
@@ -74,7 +87,12 @@ const Intro = () => {
 
 				{/* Image section */}
 
-				<div className={styles.imageContainer}>
+				<div
+					className={styles.imageContainer}
+					data-sal='slide-up'
+					data-sal-duration='1000'
+					data-sal-delay='1200'
+					data-sal-easing='easeInCubic'>
 					<StaticImage
 						src='../../assets/home_1.jpg'
 						alt='abouthome'
