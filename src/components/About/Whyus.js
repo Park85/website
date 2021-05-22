@@ -7,11 +7,21 @@ const Whyus = () => {
 	return (
 		<section className={styles.whyus}>
 			{/* Header */}
-			<div className={styles.header}>
+			<div
+				className={styles.header}
+				data-sal='slide-left'
+				data-sal-duration='500'
+				data-sal-delay='1200'
+				data-sal-easing='easeInCubic'>
 				<h3>Why Choose Atri</h3>
 				<p>We provide the best service at every step</p>
 			</div>
-			<div className={styles.wrapper}>
+			<div
+				className={styles.wrapper}
+				data-sal='slide-up'
+				data-sal-duration='500'
+				data-sal-delay='1200'
+				data-sal-easing='easeInCubic'>
 				<div className={styles.cardContainer}>
 					<div className={styles.card}>
 						<div className={styles.icon}>
@@ -24,7 +34,12 @@ const Whyus = () => {
 						</p>
 					</div>
 				</div>
-				<div className={styles.cardContainer}>
+				<div
+					className={styles.cardContainer}
+					data-sal='slide-up'
+					data-sal-duration='1000'
+					data-sal-delay='400'
+					data-sal-easing='easeInCubic'>
 					<div className={styles.card}>
 						<div className={styles.icon}>
 							<GiReceiveMoney />
@@ -36,7 +51,12 @@ const Whyus = () => {
 						</p>
 					</div>
 				</div>
-				<div className={styles.cardContainer}>
+				<div
+					className={styles.cardContainer}
+					data-sal='slide-up'
+					data-sal-duration='1000'
+					data-sal-delay='800'
+					data-sal-easing='easeInCubic'>
 					<div className={styles.card}>
 						<div className={styles.icon}>
 							<BsHouseDoor />
