@@ -47,43 +47,43 @@ const Intro = () => {
 							most fulfilling lives to their occupant at affordable prices.
 						</strong>
 					</p>
+					<div
+						className={styles.iconContainer}
+						data-sal='slide-up'
+						data-sal-duration='1000'
+						data-sal-delay='800'
+						data-sal-easing='easeInCubic'>
+						<div className={styles.iconItem}>
+							<div className={styles.icon}>
+								<AiOutlineUser size={40} />
+							</div>
+							<div>
+								<h2>2000 +</h2>
+								<h3>Happy customers</h3>
+							</div>
+						</div>
+						<div className={styles.iconItem}>
+							<div className={styles.icon}>
+								<AiOutlineHome size={40} />
+							</div>
+							<div>
+								<h2>10 +</h2>
+								<h3>Projects completed</h3>
+							</div>
+						</div>
+						<div className={styles.iconItem}>
+							<div className={styles.icon}>
+								<AiOutlineSafetyCertificate size={40} />
+							</div>
+							<div>
+								<h2>30 +</h2>
+								<h3>Years of building Trust</h3>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				{/* Icon section */}
-				<div
-					className={styles.iconContainer}
-					data-sal='slide-up'
-					data-sal-duration='1000'
-					data-sal-delay='800'
-					data-sal-easing='easeInCubic'>
-					<div className={styles.iconItem}>
-						<div className={styles.icon}>
-							<AiOutlineUser size={40} />
-						</div>
-						<div>
-							<h2>2000 +</h2>
-							<h3>Happy customers</h3>
-						</div>
-					</div>
-					<div className={styles.iconItem}>
-						<div className={styles.icon}>
-							<AiOutlineHome size={40} />
-						</div>
-						<div>
-							<h2>10 +</h2>
-							<h3>Projects completed</h3>
-						</div>
-					</div>
-					<div className={styles.iconItem}>
-						<div className={styles.icon}>
-							<AiOutlineSafetyCertificate size={40} />
-						</div>
-						<div>
-							<h2>30 +</h2>
-							<h3>Years of building Trust</h3>
-						</div>
-					</div>
-				</div>
 
 				{/* Image section */}
 
@@ -94,9 +94,10 @@ const Intro = () => {
 					data-sal-delay='1200'
 					data-sal-easing='easeInCubic'>
 					<StaticImage
-						src='../../assets/home_1.jpg'
+						src='../../assets/about-us-image.jpg'
 						alt='abouthome'
-						width={'100%'}
+						placeholder='blurred'
+						className={styles.image}
 					/>
 				</div>
 				{/* <div className={styles.imageContainer}>
