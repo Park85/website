@@ -98,6 +98,7 @@ const Intro = () => {
 						alt='abouthome'
 						placeholder='blurred'
 						className={styles.image}
+						// height={500}
 					/>
 				</div>
 				{/* <div className={styles.imageContainer}>
