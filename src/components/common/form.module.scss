@@ -1,0 +1,55 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.formContainer {
+  border: 1px solid #dbdbdb;
+  //   border: 2px solid black;
+  border-radius: 8px;
+  padding: 2.5em 1.4em;
+  margin: 0 1.4em 2em 1.4em;
+
+  .header {
+    text-align: center;
+    width: 90%;
+    font-family: $nunito;
+    font-size: 1.9rem;
+    color: $header;
+    margin: 0em auto 1.5em auto;
+  }
+  p {
+    // border: 2px solid blue;
+    text-align: center;
+    font-size: 0.9rem;
+    color: $text;
+    margin-bottom: 0 auto;
+    max-width: 750px;
+    margin-bottom: 2.5em;
+  }
+
+  .formWrapper {
+    // border: 2px solid red;
+    margin: 0 auto;
+    max-width: 750px;
+    display: grid;
+
+    .input {
+      border: 1px solid #dbdbdb;
+      //   border: 1px solid black;
+      border-radius: 8px;
+      margin-bottom: 2em;
+      padding: 1em 0.7em;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    .button {
+      padding: 0.7em 0.2em;
+      width: 65%;
+      border: 0;
+      border-radius: 8px;
+      background-image: $yellow-gradient;
+      color: white;
+      font-size: 1.2rem;
+    }
+  }
+}
