@@ -4,6 +4,7 @@ import Intro from '../components/About/Intro';
 import Whyus from '../components/About/Whyus';
 import Testimonial from '../components/common/Testimonial';
 import HeaderImage from '../components/common/HeaderImage';
+import Feedback from '../components/About/Feedback';
 const About = props => {
   console.log(props);
   return (
@@ -14,6 +15,7 @@ const About = props => {
         <Whyus />
         <Testimonial />
       </div>
+      <Feedback />
     </Layout>
   );
 };

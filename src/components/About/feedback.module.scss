@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.formContainer {
+  border: 1px solid #dbdbdb;
+  max-width: 800px;
+  border-radius: 8px;
+  padding: 2.5em 1.4em;
+  margin: 0 auto;
+  background-color: white;
+
+  .header {
+    text-align: center;
+    width: 90%;
+    font-family: $nunito;
+    font-size: 1.9rem;
+    color: $header;
+    margin: 0em auto 0.4em auto;
+  }
+  p {
+    // border: 2px solid blue;
+    text-align: center;
+    font-size: 0.9rem;
+    color: $text;
+    margin-bottom: 0 auto;
+    max-width: 750px;
+    margin-bottom: 2.5em;
+  }
+
+  .formWrapper {
+    // border: 2px solid red;
+    margin: 0 auto;
+    max-width: 750px;
+  }
+}
