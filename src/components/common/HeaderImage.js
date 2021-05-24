@@ -8,11 +8,7 @@ const query = graphql`
 	query HeaderImage {
 		bg: file(relativePath: {eq: "header-images/header-image.jpg"}) {
 			childImageSharp {
-				gatsbyImageData(
-					width: 2000
-					placeholder: BLURRED
-					formats: [AUTO, WEBP, AVIF]
-				)
+				gatsbyImageData(width: 1500, placeholder: BLURRED, formats: [WEBP])
 			}
 		}
 	}
@@ -43,7 +39,7 @@ const HeaderImage = ({title, url}) => {
 								</Link>
 							);
 						else {
-							return <span>{` / ${page}`}</span>;
+							return <span key={page}>{` / ${page}`}</span>;
 						}
 					})}
 				</p>

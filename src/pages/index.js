@@ -1,10 +1,12 @@
 import React from 'react';
 import Layout from '../components/common/Layout';
-import HeaderImage from '../components/common/HeaderImage';
+import Feedback from '../components/About/Feedback';
+
 export default function Home() {
-	return (
-		<Layout seoTitle='Home'>
-			<div>Hello world!</div>
-		</Layout>
-	);
+  return (
+    <Layout seoTitle='Home'>
+      <div>This is home page</div>
+      <Feedback />
+    </Layout>
+  );
 }
