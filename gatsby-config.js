@@ -6,6 +6,10 @@
 
 module.exports = {
 	/* Your site config here */
+	siteMetadata: {
+		title: 'Atri Group',
+		description: 'Atri Group. Developing Lifestyle',
+	},
 	plugins: [
 		{
 			resolve: `gatsby-plugin-scroll-reveal`,
@@ -56,5 +60,6 @@ module.exports = {
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`,
+		`gatsby-plugin-react-helmet`,
 	],
 };
