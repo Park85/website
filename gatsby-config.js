@@ -6,6 +6,10 @@
 
 module.exports = {
 	/* Your site config here */
+	siteMetadata: {
+		title: 'Atri Group',
+		description: 'Atri Group. Developing Lifestyle',
+	},
 	plugins: [
 		{
 			resolve: `gatsby-plugin-scroll-reveal`,
@@ -37,14 +41,25 @@ module.exports = {
 			},
 		},
 		{
-			resolve: 'gatsby-plugin-google-fonts',
+			resolve: `gatsby-plugin-webfonts`,
 			options: {
-				fonts: ['Poppins:300,400,500', 'Nunito:600,700'],
-				display: 'swap',
+				fonts: {
+					google: [
+						{
+							family: 'Poppins',
+							variants: ['300', '400', '500'],
+						},
+						{
+							family: 'Nunito',
+							variants: ['600', '700'],
+						},
+					],
+				},
 			},
 		},
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`,
+		`gatsby-plugin-react-helmet`,
 	],
 };

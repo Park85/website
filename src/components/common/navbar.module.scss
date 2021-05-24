@@ -1,0 +1,49 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+nav {
+	border: 2px solid black;
+	// background-color: gray;
+	min-height: 80px;
+	padding: 4px 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	.logo {
+		// border: 1px solid black;
+		width: auto;
+	}
+	.mobileMenu {
+		@include min-width(930px) {
+			display: none;
+		}
+		width: auto;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	.desktopMenuContainer {
+		display: none;
+		@include min-width(930px) {
+			display: flex;
+			width: 60%;
+		}
+
+		@include min-width(1300px) {
+			width: 50%;
+		}
+		max-width: 1080px;
+		// border: 2px solid black;
+		margin-right: 20px;
+		.menuList {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			.menuListitem {
+				color: white;
+			}
+		}
+	}
+}
