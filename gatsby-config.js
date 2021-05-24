@@ -37,10 +37,20 @@ module.exports = {
 			},
 		},
 		{
-			resolve: 'gatsby-plugin-google-fonts',
+			resolve: `gatsby-plugin-webfonts`,
 			options: {
-				fonts: ['Poppins:300,400,500', 'Nunito:600,700'],
-				display: 'swap',
+				fonts: {
+					google: [
+						{
+							family: 'Poppins',
+							variants: ['300', '400', '500'],
+						},
+						{
+							family: 'Nunito',
+							variants: ['600', '700'],
+						},
+					],
+				},
 			},
 		},
 		`gatsby-plugin-image`,
