@@ -10,7 +10,7 @@ const Layout = ({children, seoTitle, description}) => {
 	return (
 		<>
 			<SEO seoTitle={seoTitle} description={description} />
-			<Nav />
+			{/* <Nav /> */}
 			{children}
 			<Footer />
 		</>
