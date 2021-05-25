@@ -1,0 +1,48 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.projectConatiner {
+  border: 2px solid red;
+
+  .header {
+    text-align: center;
+    width: 90%;
+    font-family: $nunito;
+    font-size: 1.9rem;
+    color: $header;
+    margin: 0em auto 1em auto;
+  }
+
+  .projectCardContainer {
+    border: 2px solid cyan;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    .imageWrapper {
+      border: 2px solid purple;
+      margin-bottom: 0.5em;
+
+      .image {
+        height: 100%;
+        width: 100%;
+        display: block;
+      }
+    }
+    .projectName {
+      font-family: $nunito;
+      font-size: 1.2rem;
+      color: $header;
+      margin-bottom: 0.3em;
+    }
+
+    .projLocDiv {
+      display: flex;
+      align-items: center;
+      opacity: 0.5;
+      .location {
+        font-size: 0.8rem;
+        font-weight: 400;
+      }
+    }
+  }
+}
