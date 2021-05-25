@@ -1,4 +1,7 @@
-.wrapper {
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.videoWrapper {
 	overflow: hidden;
 	max-width: 100%;
 	height: 100vh;

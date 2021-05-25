@@ -3,18 +3,28 @@ import YouTube from 'react-youtube';
 import * as styles from './video.module.scss';
 import {StaticImage} from 'gatsby-plugin-image';
 
-const query = graphql`
-	{
-		thumbnail: file(relativePath: {eq: "video-thumbnail.png"}) {
-			childImageSharp {
-				gatsbyImageData(layout: CONSTRAINED, placeholder: DOMINANT_COLOR)
-			}
-		}
-	}
-`;
-
 const Video = ({youtubeId}) => {
 	const [videoReady, setVideoReady] = useState(false);
+	const [playerState, setPlayerState] = useState();
+
+	const handleResize = () => {
+		if (window.innerWidth <= 650) {
+			setVideoReady(false);
+		} else {
+			if (!videoReady && playerState === 1) setVideoReady(true);
+		}
+	};
+
+	useEffect(() => {
+		if (window !== 'undefined') {
+			window.addEventListener('resize', handleResize);
+		}
+
+		return () => {
+			window.removeEventListener('resize', handleResize);
+			console.log('Removed Listener');
+		};
+	});
 
 	const _onReady = event => {
 		// access to player in all event handlers via event.target
@@ -24,7 +34,9 @@ const Video = ({youtubeId}) => {
 	};
 
 	const _onStateChange = event => {
+		console.log(event.data);
 		if (event.data === 1) {
+			setPlayerState(event.data);
 			console.log('Video is Ready. Changing State');
 			setTimeout(() => {
 				setVideoReady(true);
@@ -63,7 +75,7 @@ const Video = ({youtubeId}) => {
 			</div>
 
 			<div
-				className={styles.wrapper}
+				className={styles.videoWrapper}
 				style={!videoReady ? {display: 'none'} : {display: 'block'}}>
 				<YouTube
 					videoId={youtubeId}
