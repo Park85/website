@@ -2,7 +2,7 @@
 @import '../../styles/mixins';
 
 .feedbackSection {
-	backgroundcolor: #f7f7f7;
+	background-color: #f7f7f7;
 	width: 100%;
 	padding: 4.5em 0.8em;
 	@include min-width(430px) {
