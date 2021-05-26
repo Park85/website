@@ -9,8 +9,15 @@ export default function Home() {
     <>
       <Video youtubeId='bz45Dr-AokM' />
       <Layout seoTitle='Home'>
-        <div>This is home page</div>
-        <Project />
+        <div style={{ background: '#f7f7f7' }}>
+          <div className='bounding-box'>
+            <Project />
+          </div>
+        </div>
+        <div className={'bounding-box'}>
+          <Testimonial />
+        </div>
+
         <Feedback />
       </Layout>
     </>
