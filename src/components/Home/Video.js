@@ -9,9 +9,15 @@ const Video = ({youtubeId}) => {
 
 	const handleResize = () => {
 		if (window.innerWidth <= 650) {
+			console.log('Resiized. Window width BELOW 650px. Falling Back!');
 			setVideoReady(false);
 		} else {
-			if (!videoReady && playerState === 1) setVideoReady(true);
+			if (!videoReady && playerState === 1) {
+				console.log(
+					'Resized. Window width ABOVE 650px. Player state is 1. Changing State!'
+				);
+				setVideoReady(true);
+			}
 		}
 	};
 
@@ -35,12 +41,20 @@ const Video = ({youtubeId}) => {
 
 	const _onStateChange = event => {
 		console.log(event.data);
-		if (event.data === 1) {
-			setPlayerState(event.data);
-			console.log('Video is Ready. Changing State');
-			setTimeout(() => {
-				setVideoReady(true);
-			}, 500);
+		setPlayerState(event.data);
+		if (window !== 'undefined') {
+			if (event.data === 1 && window.innerWidth >= 650) {
+				// console.log('Width : ', window.innerWidth);
+				console.log(
+					'Video is Ready. Window width above 650px. Changing State.'
+				);
+				setTimeout(() => {
+					setVideoReady(true);
+				}, 500);
+			} else {
+				console.log('Player state NOT 1. Falling Back!');
+				setVideoReady(false);
+			}
 		}
 	};
 
