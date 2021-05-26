@@ -106,7 +106,7 @@ const Video = ({youtubeId}) => {
 				<header>
 					<h1>Atri Group</h1>
 					<p>Developing Lifestyle</p>
-					<button> Explore</button>
+					<button>Explore</button>
 				</header>
 			</div>
 		</>
