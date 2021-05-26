@@ -102,7 +102,13 @@ const Video = ({youtubeId}) => {
 				/>
 			</div>
 
-			<div id={styles.overlay}></div>
+			<div id={styles.overlay}>
+				<header>
+					<h1>Atri Group</h1>
+					<p>Developing Lifestyle</p>
+					<button> Explore</button>
+				</header>
+			</div>
 		</>
 	);
 };
