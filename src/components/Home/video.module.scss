@@ -82,6 +82,9 @@
 				height: 3px;
 				border-radius: 8px;
 				background-color: white;
+				@include max-width(430px) {
+					width: 15%;
+				}
 				// display: block;
 			}
 			&::after {
@@ -93,6 +96,9 @@
 				height: 3px;
 				background-color: white;
 				border-radius: 8px;
+				@include max-width(430px) {
+					width: 15%;
+				}
 				// display: block;
 			}
 			@include max-width(1200px) {
