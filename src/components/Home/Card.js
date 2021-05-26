@@ -5,7 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
 const Card = () => {
   return (
-    <Link to='/about' className={styles.projectCardContainer}>
+    <Link to='/' className={styles.projectCardContainer}>
       <div className={styles.imageWrapper}>
         <StaticImage
           src='../../assets/building.jpg'
