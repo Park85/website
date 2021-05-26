@@ -53,6 +53,10 @@ module.exports = {
 							family: 'Nunito',
 							variants: ['600', '700'],
 						},
+						{
+							family: 'Sacramento',
+							variants: ['400'],
+						},
 					],
 				},
 			},
