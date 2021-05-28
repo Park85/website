@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from 'gatsby';
 import {StaticImage} from 'gatsby-plugin-image';
 import {
@@ -7,14 +7,11 @@ import {
 	ListContainer,
 	IconHolder,
 	NavMenuButton,
+	NavCloseButton,
 	MobileListContainer,
 } from './navbar.styled';
 
 const links = [
-	{
-		title: 'Home',
-		link: '/',
-	},
 	{
 		title: 'About',
 		link: '/about',
@@ -73,7 +70,13 @@ const Navbar = ({home, activateScrolledNavbar}) => {
 					{links.map(link => {
 						return (
 							<li key={link.title}>
-								<Link to={link.link}>{link.title}</Link>
+								<Link
+									to={link.link}
+									onClick={() => {
+										navOpen && setNavOpen(curr => !curr);
+									}}>
+									{link.title}
+								</Link>
 							</li>
 						);
 					})}
@@ -81,15 +84,15 @@ const Navbar = ({home, activateScrolledNavbar}) => {
 
 				<IconHolder
 					onClick={() => {
-						setNavOpen(true);
+						setNavOpen(curr => !curr);
 					}}>
-					<NavMenuButton home={home} scrolled={activateScrolledNavbar} />
+					{!navOpen ? (
+						<NavMenuButton home={home} scrolled={activateScrolledNavbar} />
+					) : (
+						<NavCloseButton />
+					)}
 				</IconHolder>
 			</BoundingBox>
-
-			{/* <div onClick={handleclick} className={styles.mobileMenu}>
-				{isClicked ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
-			</div> */}
 		</Nav>
 	);
 };

@@ -9,11 +9,12 @@ const useIntersection = ref => {
 	};
 
 	const observe = entries => {
+		console.log(entries);
 		if (entries[0].isIntersecting) {
-			// console.log('Ref is in View');
+			console.log('Ref is in View');
 			setActivateSrolledNavbar(false);
 		} else {
-			// console.log('Ref out of view');
+			console.log('Ref out of view');
 			setActivateSrolledNavbar(true);
 		}
 	};
