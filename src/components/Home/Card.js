@@ -1,5 +1,5 @@
 import React from 'react';
-import * as styles from './project.module.scss';
+import * as styles from './card.module.scss';
 import { IoLocationOutline } from 'react-icons/io5';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
