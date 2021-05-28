@@ -1,9 +1,14 @@
-import React, {useState, useEffect, useRef} from 'react';
-import * as styles from './navbar.module.scss';
-import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'gatsby';
 import {StaticImage} from 'gatsby-plugin-image';
-import {Nav, BoundingBox, ListContainer} from './navbar.styled';
+import {
+	Nav,
+	BoundingBox,
+	ListContainer,
+	IconHolder,
+	NavMenuButton,
+	MobileListContainer,
+} from './navbar.styled';
 
 const links = [
 	{
@@ -37,39 +42,23 @@ const links = [
 ];
 
 const Navbar = ({home, activateScrolledNavbar}) => {
-	// const [isClicked, setIsClicked] = useState(false);
-	// const [activateSrolledNavbar, setActivateSrolledNavbar] = useState(false);
-	// const navRef = useRef(null);
+	const [navOpen, setNavOpen] = useState(false);
 
-	// const observe = entries => {
-	// 	console.log('Firing');
-	// 	console.log(entries[0]);
-	// 	if (!entries[0].isIntersecting) setActivateSrolledNavbar(true);
-	// 	else console.log('Navbar Visible');
-	// };
-	// // const handleclick = () => {
-	// // 	setIsClicked(!isClicked);
-	// // };
+	const handleResize = () => {
+		if (window.innerWidth > 890 && navOpen) setNavOpen(false);
+	};
 
-	// const options = {
-	// 	rootMargin: '100px',
-	// 	threshold: 1.0,
-	// };
-
-	// useEffect(() => {
-	// 	console.log('Hello');
-	// 	const observer = new IntersectionObserver(observe, options);
-	// 	if (navRef.current) observer.observe(navRef.current);
-
-	// 	return () => {
-	// 		if (navRef.current) observer.unobserve(navRef.current);
-	// 	};
-	// }, []);
+	useEffect(() => {
+		window.addEventListener('resize', handleResize);
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, [navOpen]);
 
 	return (
 		<Nav scrolled={activateScrolledNavbar} home={home}>
 			<BoundingBox>
-				<Link to='/' className={styles.logo}>
+				<Link to='/'>
 					<StaticImage
 						src='../../assets/logo_modified.png'
 						alt='logo'
@@ -77,7 +66,10 @@ const Navbar = ({home, activateScrolledNavbar}) => {
 						placeholder='blurred'
 					/>
 				</Link>
-				<ListContainer scrolled={activateScrolledNavbar} home={home}>
+				<ListContainer
+					scrolled={activateScrolledNavbar}
+					home={home}
+					navOpen={navOpen}>
 					{links.map(link => {
 						return (
 							<li key={link.title}>
@@ -86,6 +78,13 @@ const Navbar = ({home, activateScrolledNavbar}) => {
 						);
 					})}
 				</ListContainer>
+
+				<IconHolder
+					onClick={() => {
+						setNavOpen(true);
+					}}>
+					<NavMenuButton home={home} scrolled={activateScrolledNavbar} />
+				</IconHolder>
 			</BoundingBox>
 
 			{/* <div onClick={handleclick} className={styles.mobileMenu}>
