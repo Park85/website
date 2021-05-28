@@ -3,7 +3,7 @@ import YouTube from 'react-youtube';
 import * as styles from './video.module.scss';
 import {StaticImage} from 'gatsby-plugin-image';
 
-const Video = ({youtubeId}) => {
+const Video = React.forwardRef(({youtubeId}, ref) => {
 	const [videoReady, setVideoReady] = useState(false);
 	const [playerState, setPlayerState] = useState();
 
@@ -102,7 +102,7 @@ const Video = ({youtubeId}) => {
 				/>
 			</div>
 
-			<div id={styles.overlay}>
+			<div id={styles.overlay} ref={ref}>
 				<header>
 					<h1>Atri Group</h1>
 					<p>Developing Lifestyle</p>
@@ -111,5 +111,5 @@ const Video = ({youtubeId}) => {
 			</div>
 		</>
 	);
-};
+});
 export default Video;

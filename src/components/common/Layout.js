@@ -6,11 +6,17 @@ import '../../styles/globals.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const Layout = ({children, seoTitle, description}) => {
+const Layout = ({
+	children,
+	seoTitle,
+	description,
+	home,
+	activateScrolledNavbar,
+}) => {
 	return (
 		<>
 			<SEO seoTitle={seoTitle} description={description} />
-			{/* <Nav /> */}
+			<Nav home={home} activateScrolledNavbar={activateScrolledNavbar} />
 			{children}
 			<Footer />
 		</>

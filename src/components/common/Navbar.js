@@ -1,63 +1,97 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import * as styles from './navbar.module.scss';
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai';
 import {Link} from 'gatsby';
 import {StaticImage} from 'gatsby-plugin-image';
+import {Nav, BoundingBox, ListContainer} from './navbar.styled';
 
-const Navbar = () => {
-	const [isClicked, setIsClicked] = useState(false);
+const links = [
+	{
+		title: 'Home',
+		link: '/',
+	},
+	{
+		title: 'About',
+		link: '/about',
+	},
+	{
+		title: 'Projects',
+		link: '/projects',
+	},
+	{
+		title: 'Careers',
+		link: '/careers',
+	},
+	{
+		title: 'Business',
+		link: '/business',
+	},
+	{
+		title: 'Blogs',
+		link: '/blogs',
+	},
+	{
+		title: 'Contact',
+		link: '/contact',
+	},
+];
 
-	const handleclick = () => {
-		setIsClicked(!isClicked);
-	};
+const Navbar = ({home, activateScrolledNavbar}) => {
+	// const [isClicked, setIsClicked] = useState(false);
+	// const [activateSrolledNavbar, setActivateSrolledNavbar] = useState(false);
+	// const navRef = useRef(null);
+
+	// const observe = entries => {
+	// 	console.log('Firing');
+	// 	console.log(entries[0]);
+	// 	if (!entries[0].isIntersecting) setActivateSrolledNavbar(true);
+	// 	else console.log('Navbar Visible');
+	// };
+	// // const handleclick = () => {
+	// // 	setIsClicked(!isClicked);
+	// // };
+
+	// const options = {
+	// 	rootMargin: '100px',
+	// 	threshold: 1.0,
+	// };
+
+	// useEffect(() => {
+	// 	console.log('Hello');
+	// 	const observer = new IntersectionObserver(observe, options);
+	// 	if (navRef.current) observer.observe(navRef.current);
+
+	// 	return () => {
+	// 		if (navRef.current) observer.unobserve(navRef.current);
+	// 	};
+	// }, []);
+
 	return (
-		<nav>
-			<div className={styles.logo}>
-				<StaticImage src='../../assets/logo_1.png' alt='logo' width={200} />
-			</div>
-			<div onClick={handleclick} className={styles.mobileMenu}>
+		<Nav scrolled={activateScrolledNavbar} home={home}>
+			<BoundingBox>
+				<Link to='/' className={styles.logo}>
+					<StaticImage
+						src='../../assets/logo_modified.png'
+						alt='logo'
+						width={70}
+						placeholder='blurred'
+					/>
+				</Link>
+				<ListContainer scrolled={activateScrolledNavbar} home={home}>
+					{links.map(link => {
+						return (
+							<li key={link.title}>
+								<Link to={link.link}>{link.title}</Link>
+							</li>
+						);
+					})}
+				</ListContainer>
+			</BoundingBox>
+
+			{/* <div onClick={handleclick} className={styles.mobileMenu}>
 				{isClicked ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
-			</div>
-			<div className={styles.desktopMenuContainer}>
-				<ul className={styles.menuList}>
-					<li>
-						<Link to='/' className={styles.menuListitem}>
-							Home
-						</Link>
-					</li>
-
-					<li>
-						<Link to='/about' className={styles.menuListitem}>
-							Projects
-						</Link>
-					</li>
-
-					<li>
-						<Link to='/about' className={styles.menuListitem}>
-							About us
-						</Link>
-					</li>
-
-					<li>
-						<Link to='/about' className={styles.menuListitem}>
-							Career
-						</Link>
-					</li>
-
-					<li>
-						<Link to='/about' className={styles.menuListitem}>
-							Enquiry
-						</Link>
-					</li>
-
-					<li>
-						<Link to='/about' className={styles.menuListitem}>
-							Business Oportunity
-						</Link>
-					</li>
-				</ul>
-			</div>
-		</nav>
+			</div> */}
+		</Nav>
 	);
 };
 

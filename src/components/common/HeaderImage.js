@@ -14,14 +14,14 @@ const query = graphql`
 	}
 `;
 
-const HeaderImage = ({title, url}) => {
+const HeaderImage = React.forwardRef(({title, url}, ref) => {
 	const {bg} = useStaticQuery(query);
 	const bgImage = getImage(bg);
 	const path = url.split('/');
-	console.log(path);
+	// console.log(path);
 	return (
 		<BgImage image={bgImage} className={styles.headerBg}>
-			<div className={styles.overlay}></div>
+			<div className={styles.overlay} ref={ref}></div>
 			<div className={`bounding-box ${styles.headerContainer}`}>
 				<h1>{title}</h1>
 				<p>
@@ -46,6 +46,6 @@ const HeaderImage = ({title, url}) => {
 			</div>
 		</BgImage>
 	);
-};
+});
 
 export default HeaderImage;
