@@ -1,63 +1,99 @@
-import React, {useState} from 'react';
-import * as styles from './navbar.module.scss';
-import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai';
+import React, {useEffect, useState} from 'react';
 import {Link} from 'gatsby';
 import {StaticImage} from 'gatsby-plugin-image';
+import {
+	Nav,
+	BoundingBox,
+	ListContainer,
+	IconHolder,
+	NavMenuButton,
+	NavCloseButton,
+	MobileListContainer,
+} from './navbar.styled';
 
-const Navbar = () => {
-	const [isClicked, setIsClicked] = useState(false);
+const links = [
+	{
+		title: 'About',
+		link: '/about',
+	},
+	{
+		title: 'Projects',
+		link: '/projects',
+	},
+	{
+		title: 'Careers',
+		link: '/careers',
+	},
+	{
+		title: 'Business',
+		link: '/business',
+	},
+	{
+		title: 'Blogs',
+		link: '/blogs',
+	},
+	{
+		title: 'Contact',
+		link: '/contact',
+	},
+];
 
-	const handleclick = () => {
-		setIsClicked(!isClicked);
+const Navbar = ({home, activateScrolledNavbar}) => {
+	const [navOpen, setNavOpen] = useState(false);
+
+	const handleResize = () => {
+		if (window.innerWidth > 890 && navOpen) setNavOpen(false);
 	};
+
+	useEffect(() => {
+		window.addEventListener('resize', handleResize);
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, [navOpen]);
+
 	return (
-		<nav>
-			<div className={styles.logo}>
-				<StaticImage src='../../assets/logo_1.png' alt='logo' width={200} />
-			</div>
-			<div onClick={handleclick} className={styles.mobileMenu}>
-				{isClicked ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
-			</div>
-			<div className={styles.desktopMenuContainer}>
-				<ul className={styles.menuList}>
-					<li>
-						<Link to='/' className={styles.menuListitem}>
-							Home
-						</Link>
-					</li>
+		<Nav scrolled={activateScrolledNavbar} home={home}>
+			<BoundingBox>
+				<Link to='/'>
+					<StaticImage
+						src='../../assets/logo_modified.png'
+						alt='logo'
+						width={70}
+						placeholder='blurred'
+					/>
+				</Link>
+				<ListContainer
+					scrolled={activateScrolledNavbar}
+					home={home}
+					navOpen={navOpen}>
+					{links.map(link => {
+						return (
+							<li key={link.title}>
+								<Link
+									to={link.link}
+									onClick={() => {
+										navOpen && setNavOpen(curr => !curr);
+									}}>
+									{link.title}
+								</Link>
+							</li>
+						);
+					})}
+				</ListContainer>
 
-					<li>
-						<Link to='/about' className={styles.menuListitem}>
-							Projects
-						</Link>
-					</li>
-
-					<li>
-						<Link to='/about' className={styles.menuListitem}>
-							About us
-						</Link>
-					</li>
-
-					<li>
-						<Link to='/about' className={styles.menuListitem}>
-							Career
-						</Link>
-					</li>
-
-					<li>
-						<Link to='/about' className={styles.menuListitem}>
-							Enquiry
-						</Link>
-					</li>
-
-					<li>
-						<Link to='/about' className={styles.menuListitem}>
-							Business Oportunity
-						</Link>
-					</li>
-				</ul>
-			</div>
-		</nav>
+				<IconHolder
+					onClick={() => {
+						setNavOpen(curr => !curr);
+					}}>
+					{!navOpen ? (
+						<NavMenuButton home={home} scrolled={activateScrolledNavbar} />
+					) : (
+						<NavCloseButton />
+					)}
+				</IconHolder>
+			</BoundingBox>
+		</Nav>
 	);
 };
 
