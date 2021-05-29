@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react';
 import YouTube from 'react-youtube';
 import * as styles from './video.module.scss';
 import {StaticImage} from 'gatsby-plugin-image';
-
+import scrollTo from 'gatsby-plugin-smoothscroll';
+import {Link, animateScroll as scroll} from 'react-scroll';
 const Video = React.forwardRef(({youtubeId}, ref) => {
 	const [videoReady, setVideoReady] = useState(false);
 	const [playerState, setPlayerState] = useState();
@@ -109,7 +110,14 @@ const Video = React.forwardRef(({youtubeId}, ref) => {
 				<header>
 					<h1>Atri Group</h1>
 					<p>Developing Lifestyle</p>
-					<button>Explore</button>
+					<Link
+						to='projects'
+						spy={true}
+						smooth={true}
+						offset={-70}
+						duration={500}>
+						Explore
+					</Link>
 				</header>
 			</div>
 		</>
