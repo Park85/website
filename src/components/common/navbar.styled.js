@@ -24,6 +24,10 @@ export const Nav = styled.nav`
 	transition: all 150ms ease-in-out;
 	background: ${props =>
 		props.home ? (props.scrolled ? 'white' : 'transparent') : 'white'};
+
+	@media (max-width: 890px) {
+		padding: 15px 0;
+	}
 `;
 
 export const BoundingBox = styled.div`
@@ -54,6 +58,7 @@ export const ListContainer = styled.ul`
 		background : white;
 		z-index:2000;
 		padding :4em 2em;
+		
 	`}
 
 	@media (max-width: 1100px) {
@@ -76,13 +81,14 @@ export const ListContainer = styled.ul`
 	& a {
 		color: ${props =>
 			!props.navOpen &&
-			(props.home ? (props.scrolled ? 'black' : 'white') : 'black')};
+			(props.home ? (props.scrolled ? '#24324a' : 'white') : '#24324a')};
 		transition: all 150ms ease-in-out;
 
 		${props =>
 			props.navOpen &&
 			`
-			color:black;
+			color:#24324a
+;
 			`}
 	}
 
@@ -108,11 +114,11 @@ export const IconHolder = styled.div`
 export const NavMenuButton = styled(GiHamburgerMenu)`
 	font-size: 30px;
 	color: ${props =>
-		props.home ? (props.scrolled ? 'black' : 'white') : 'black'};
+		props.home ? (props.scrolled ? '#24324a' : 'white') : '#24324a'};
 `;
 
 export const NavCloseButton = styled(IoMdClose)`
-	color: black;
+	color: #24324a;
 	font-size: 30px;
 	z-index: 2000;
 `;
