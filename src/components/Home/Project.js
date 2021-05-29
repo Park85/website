@@ -13,6 +13,7 @@ const Project = () => {
           featured
           id
           price
+          slug
           thumbnail {
             url
           }
@@ -32,7 +33,7 @@ const Project = () => {
             return <Card key={featured.id} data={featured} />;
           })}
       </div>
-      <Link to='/about' className={styles.btn}>
+      <Link to='/projects' className={styles.btn}>
         Show more {'>'}
       </Link>
     </div>

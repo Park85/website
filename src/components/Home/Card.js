@@ -7,7 +7,7 @@ const Card = ({ data }) => {
   const url = data.thumbnail[0].url;
   console.log('url', url);
   return (
-    <Link to='/' className={styles.projectCardContainer}>
+    <Link to={`/projects/${data.slug}`} className={styles.projectCardContainer}>
       <div className={styles.imageWrapper}>
         <img src={url} loading={lazy} alt='abouthome' height={350} className={styles.image} />
       </div>
