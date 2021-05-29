@@ -4,8 +4,8 @@ const useIntersection = ref => {
 	const [activateSrolledNavbar, setActivateSrolledNavbar] = useState(false);
 
 	const options = {
-		rootMargin: '0px',
-		threshold: 1.0,
+		rootMargin: '0px 0px 200px 0px',
+		threshold: 1,
 	};
 
 	const observe = entries => {

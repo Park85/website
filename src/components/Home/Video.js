@@ -34,8 +34,9 @@ const Video = React.forwardRef(({youtubeId}, ref) => {
 
 	const _onReady = event => {
 		// access to player in all event handlers via event.target
-		event.target.mute();
+		console.log('Should Mute');
 		event.target.seekTo(4);
+		event.target.setVolume(0);
 		event.target.playVideo();
 	};
 
