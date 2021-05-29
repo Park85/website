@@ -46,6 +46,7 @@ const Video = React.forwardRef(({youtubeId}, ref) => {
 		if (window !== 'undefined') {
 			if (event.data === 1 && window.innerWidth >= 650) {
 				// console.log('Width : ', window.innerWidth);
+				event.target.mute();
 				console.log(
 					'Video is Ready. Window width above 650px. Changing State.'
 				);
@@ -53,6 +54,7 @@ const Video = React.forwardRef(({youtubeId}, ref) => {
 					setVideoReady(true);
 				}, 500);
 			} else {
+				event.target.mute();
 				console.log('Player state NOT 1. Falling Back!');
 				setVideoReady(false);
 			}
