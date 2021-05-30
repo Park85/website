@@ -1,39 +1,43 @@
-const {createRemoteFileNode} = require('gatsby-source-filesystem');
+const { createRemoteFileNode } = require('gatsby-source-filesystem');
+const path = require('path');
 
-// exports.createSchemaCustomization = ({actions}) => {
-// 	const {createTypes} = actions;
+exports.onCreateNode = async ({ node, actions: { createNode }, store, cache, createNodeId }) => {
+  if (node.internal.type === 'contentfulProjectsThumbnailJsonNode') {
+    const fileNode = await createRemoteFileNode({
+      url: node.url,
+      parentNodeId: node.id,
+      createNode,
+      createNodeId,
+      cache,
+      store,
+    });
 
-// 	createTypes(`
-// 	    type ContentfulProjects implements Node{
-//             thumbnail:contentfulProjectsThumbnailJsonNode
-//             thumbnailUrl : File @link(from: "thumbnailUrl___NODE")
-// 	    }
+    if (fileNode) {
+      node.optimizedThumbnails___NODE = fileNode.id;
+    }
+  }
+};
 
-// 	    type contentfulProjectsThumbnailJsonNode{
-// 	        url:String!
-// 	    }
-// 	`);
-// };
-
-exports.onCreateNode = async ({
-	node,
-	actions: {createNode},
-	store,
-	cache,
-	createNodeId,
-}) => {
-	if (node.internal.type === 'contentfulProjectsThumbnailJsonNode') {
-		const fileNode = await createRemoteFileNode({
-			url: node.url,
-			parentNodeId: node.id,
-			createNode,
-			createNodeId,
-			cache,
-			store,
-		});
-
-		if (fileNode) {
-			node.optimizedThumbnails___NODE = fileNode.id;
-		}
-	}
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  const projectTemplate = path.resolve('src/templates/project-template.js');
+  const result = await graphql(`
+    {
+      allContentfulProjects {
+        nodes {
+          contentful_id
+          slug
+        }
+      }
+    }
+  `);
+  result.data.allContentfulProjects.nodes.forEach(node => {
+    createPage({
+      path: `/projects/${node.slug}`,
+      component: projectTemplate,
+      context: {
+        id: node.contentful_id,
+      },
+    });
+  });
 };
