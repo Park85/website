@@ -2,10 +2,10 @@ import React, {useRef} from 'react';
 import Layout from '../components/common/Layout';
 import Intro from '../components/About/Intro';
 import Whyus from '../components/About/Whyus';
+import useIntersection from '../hooks/useIntersection';
+import Feedback from '../components/About/Feedback';
 import Testimonial from '../components/common/Testimonial';
 import HeaderImage from '../components/common/HeaderImage';
-import Feedback from '../components/About/Feedback';
-import useIntersection from '../hooks/useIntersection';
 
 const About = props => {
 	const containerRef = useRef(null);

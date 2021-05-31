@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 
 const useIntersection = ref => {
 	const [activateSrolledNavbar, setActivateSrolledNavbar] = useState(false);
@@ -9,22 +9,24 @@ const useIntersection = ref => {
 	};
 
 	const observe = entries => {
-		console.log(entries);
+		// console.log(entries);
 		if (entries[0].isIntersecting) {
-			console.log('Ref is in View');
+			// console.log('Ref is in View');
 			setActivateSrolledNavbar(false);
 		} else {
-			console.log('Ref out of view');
+			// console.log('Ref out of view');
 			setActivateSrolledNavbar(true);
 		}
 	};
 
 	useEffect(() => {
+		// Copied this to a local value as a suggestion from Gatsby warnings
+		const refCopy = ref.current;
 		const observer = new IntersectionObserver(observe, options);
-		if (ref.current) observer.observe(ref.current);
+		if (refCopy) observer.observe(refCopy);
 
 		return () => {
-			if (ref.current) observer.unobserve(ref.current);
+			if (refCopy) observer.unobserve(refCopy);
 		};
 	});
 

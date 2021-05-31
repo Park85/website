@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useCallback} from 'react';
 import {Link} from 'gatsby';
 import {StaticImage} from 'gatsby-plugin-image';
 import {
@@ -8,7 +8,6 @@ import {
 	IconHolder,
 	NavMenuButton,
 	NavCloseButton,
-	MobileListContainer,
 } from './navbar.styled';
 
 const links = [
@@ -41,16 +40,16 @@ const links = [
 const Navbar = ({home, activateScrolledNavbar}) => {
 	const [navOpen, setNavOpen] = useState(false);
 
-	const handleResize = () => {
+	const handleResize = useCallback(() => {
 		if (window.innerWidth > 890 && navOpen) setNavOpen(false);
-	};
+	}, [navOpen]);
 
 	useEffect(() => {
 		window.addEventListener('resize', handleResize);
 		return () => {
 			window.removeEventListener('resize', handleResize);
 		};
-	}, [navOpen]);
+	}, [handleResize]);
 
 	return (
 		<Nav scrolled={activateScrolledNavbar} home={home}>

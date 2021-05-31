@@ -1,7 +1,8 @@
 import React from 'react';
 import * as styles from './footer.module.scss';
 import {Link} from 'gatsby';
-import {SiYoutube, SiFacebook, SiInstagram, SiTwitter} from 'react-icons/si';
+import social from '../../utils/socials';
+import * as uniqueId from 'lodash/uniqueId';
 const Footer = () => {
 	return (
 		<footer>
@@ -21,25 +22,22 @@ const Footer = () => {
 						<h2>Quick Links</h2>
 						<ul>
 							<li>
-								<Link to='/about'>About Us</Link>
+								<Link to='/projects'>Projects</Link>
 							</li>
 							<li>
 								<Link to='/contact'>Contact Us</Link>
 							</li>
 							<li>
-								<Link to='#'>Terms and Conditions</Link>
+								<Link to='/careers'>Careers</Link>
 							</li>
 							<li>
-								<Link to='#'>About Us</Link>
+								<Link to='/business'>Business Opportunity</Link>
 							</li>
 							<li>
-								<Link to='#'>Terms and Conditions</Link>
+								<Link to='/privacy'>Privacy Policy</Link>
 							</li>
 							<li>
-								<Link to='#'>About Us</Link>
-							</li>
-							<li>
-								<Link to='#'>Terms and Conditions</Link>
+								<Link to='/terms'>Terms and Conditions</Link>
 							</li>
 						</ul>
 					</div>
@@ -70,26 +68,15 @@ const Footer = () => {
 					<div className={styles.social}>
 						<h2>Social</h2>
 						<ul>
-							<li>
-								<a href='#'>
-									<SiYoutube />
-								</a>
-							</li>
-							<li>
-								<a href='#'>
-									<SiFacebook />
-								</a>
-							</li>
-							<li>
-								<a href='#'>
-									<SiInstagram />
-								</a>
-							</li>
-							<li>
-								<a href='#'>
-									<SiTwitter />
-								</a>
-							</li>
+							{social.map(icon => {
+								return (
+									<li key={uniqueId()}>
+										<a href={icon.link} rel='noreferrer' target='_blank'>
+											{icon.icon_2}
+										</a>
+									</li>
+								);
+							})}
 						</ul>
 					</div>
 				</div>

@@ -5,7 +5,7 @@ import {MdNavigateNext, MdNavigateBefore} from 'react-icons/md';
 import {ImQuotesLeft} from 'react-icons/im';
 
 const SampleNextArrow = props => {
-	const {className, style, onClick} = props;
+	const {className, onClick} = props;
 	return (
 		<MdNavigateNext
 			className={className}
@@ -17,7 +17,7 @@ const SampleNextArrow = props => {
 };
 
 const SamplePrevArrow = props => {
-	const {className, style, onClick} = props;
+	const {className, onClick} = props;
 	return (
 		<MdNavigateBefore
 			className={className}

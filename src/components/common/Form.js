@@ -22,10 +22,10 @@ const Form = () => {
 			}
 			if (!values.email) {
 				errors.email = 'Email cannot be empty !';
-			} else if (regem.test(values.email) == false) {
+			} else if (regem.test(values.email) === false) {
 				errors.email = 'Invalid email!';
 			}
-			if (!values.message || values.message == ' ') {
+			if (!values.message || values.message === ' ') {
 				errors.message = 'Message cannot be empty !';
 			}
 

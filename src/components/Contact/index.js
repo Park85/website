@@ -1,7 +1,8 @@
 import React from 'react';
-import * as styles from './contact.module.scss';
-import {FaFacebookF, FaYoutube, FaTwitter, FaInstagram} from 'react-icons/fa';
 import Form from '../common/Form';
+import * as styles from './contact.module.scss';
+import * as uniqueId from 'lodash/uniqueId';
+import social from '../../utils/socials';
 const ContactDetails = () => {
 	return (
 		<section className={styles.contact}>
@@ -39,8 +40,10 @@ const ContactDetails = () => {
 						<ul className={styles.socialWrapper}>
 							{social.map(icon => {
 								return (
-									<li key={icon.link}>
-										<a href={icon.link}>{icon.icon}</a>
+									<li key={uniqueId()}>
+										<a href={icon.link} rel='noreferrer' target='_blank'>
+											{icon.icon_1}
+										</a>
 									</li>
 								);
 							})}
@@ -51,24 +54,5 @@ const ContactDetails = () => {
 		</section>
 	);
 };
-
-const social = [
-	{
-		icon: <FaFacebookF />,
-		link: 'https://facebook.com',
-	},
-	{
-		icon: <FaYoutube />,
-		link: 'https://youtube.com',
-	},
-	{
-		icon: <FaTwitter />,
-		link: 'https://twitter.com',
-	},
-	{
-		icon: <FaInstagram />,
-		link: 'https://instagram.com',
-	},
-];
 
 export default ContactDetails;
