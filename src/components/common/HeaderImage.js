@@ -32,7 +32,7 @@ const HeaderImage = React.forwardRef(({title, url}, ref) => {
 									Home
 								</Link>
 							);
-						else if (index < path.length - 1 && path.length != 2)
+						else if (index < path.length - 1 && path.length !== 2)
 							return (
 								<Link to={`/${page}`} key={page}>
 									{` / ${page}`}

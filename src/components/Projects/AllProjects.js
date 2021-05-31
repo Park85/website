@@ -1,7 +1,7 @@
 import React from 'react';
-import * as styles from './allprojects.module.scss';
 import {graphql, useStaticQuery} from 'gatsby';
 import Card from '../Home/Card';
+import * as styles from './allprojects.module.scss';
 
 const AllProjects = () => {
 	const data = useStaticQuery(graphql`

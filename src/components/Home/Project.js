@@ -31,7 +31,7 @@ const Project = () => {
 		}
 	`);
 	const projects = data.allContentfulProjects.nodes;
-	console.log(projects);
+	// console.log(projects);
 	return (
 		<div className={styles.projectConatiner} id='projects'>
 			<h1 className={styles.header}>Featured Projects</h1>

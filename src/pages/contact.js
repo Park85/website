@@ -1,8 +1,8 @@
 import React, {useRef} from 'react';
-import HeaderImage from '../components/common/HeaderImage';
 import Layout from '../components/common/Layout';
 import ContactDetails from '../components/Contact';
 import useIntersection from '../hooks/useIntersection';
+import HeaderImage from '../components/common/HeaderImage';
 
 const Contact = props => {
 	const containerRef = useRef(null);

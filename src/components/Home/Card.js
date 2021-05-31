@@ -1,8 +1,8 @@
 import React from 'react';
-import * as styles from './card.module.scss';
 import {IoLocationOutline} from 'react-icons/io5';
 import {GatsbyImage, getImage} from 'gatsby-plugin-image';
 import {Link} from 'gatsby';
+import * as styles from './card.module.scss';
 const Card = ({data}) => {
 	return (
 		<Link to={`/projects/${data.slug}`} className={styles.projectCardContainer}>
