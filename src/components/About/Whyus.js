@@ -13,7 +13,7 @@ const Whyus = () => {
         data-sal-duration='500'
         data-sal-delay='1200'
         data-sal-easing='easeInCubic'>
-        <h3>Why Choose Atri</h3>
+        <h3>Why Choose Park85</h3>
         <p>We provide the best service at every step</p>
       </div>
       <div
