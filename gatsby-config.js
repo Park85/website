@@ -9,8 +9,8 @@ require('dotenv').config();
 module.exports = {
 	/* Your site config here */
 	siteMetadata: {
-		title: 'Atri Group',
-		description: 'Atri Group. Developing Lifestyle',
+		title: 'Park 85',
+		description: 'Park 85. Developing Lifestyle',
 	},
 	plugins: [
 		{
