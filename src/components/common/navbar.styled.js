@@ -47,8 +47,7 @@ export const ListContainer = styled.ul`
 
 	${props =>
 		props.navOpen &&
-		`
-		display : block !important;
+		`display : block !important;
 		position: absolute !important;
 		top: 0 ;
 		left: 0 ;
@@ -57,9 +56,7 @@ export const ListContainer = styled.ul`
 		width:100vh !important;
 		background : white;
 		z-index:2000;
-		padding :4em 2em;
-		
-	`}
+		padding :4em 2em;`}
 
 	@media (max-width: 1100px) {
 		width: 40%;
@@ -71,11 +68,9 @@ export const ListContainer = styled.ul`
 	& li {
 		${props =>
 			props.navOpen &&
-			`
-			margin-bottom:2em;
+			`margin-bottom:2em;
 			border-bottom : 1px solid #ebebeb;
-			width: 80%;
-			`}
+			width: 80%;`}
 	}
 
 	& a {
@@ -84,12 +79,7 @@ export const ListContainer = styled.ul`
 			(props.home ? (props.scrolled ? '#24324a' : 'white') : '#24324a')};
 		transition: all 150ms ease-in-out;
 
-		${props =>
-			props.navOpen &&
-			`
-			color:#24324a
-;
-			`}
+		${props => props.navOpen && `color:#24324a;`}
 	}
 
 	& a:hover {

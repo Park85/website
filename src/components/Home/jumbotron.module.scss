@@ -92,10 +92,12 @@
 			@include max-width(500px) {
 				padding: 0.4em 1.8em;
 			}
-			&:hover {
-				cursor: pointer;
-				color: white;
-				background-color: $primary-color;
+			@media (hover: hover) {
+				&:hover {
+					cursor: pointer;
+					color: white;
+					background-color: $primary-color;
+				}
 			}
 		}
 	}

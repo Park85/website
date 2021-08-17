@@ -39,16 +39,12 @@ const Form = () => {
 			onSubmit={handleSubmit}>
 			<FormikForm autoComplete='off' className={styles.form}>
 				<div className={styles.inputWrapper} id={styles.name}>
-					<Field name='name' className={styles.input} placeholder='John Doe' />
+					<Field name='name' className={styles.input} placeholder='Name' />
 					<ErrorMessage name='name' className={styles.error} component='h3' />
 				</div>
 
 				<div className={styles.inputWrapper} id={styles.email}>
-					<Field
-						name='email'
-						className={styles.input}
-						placeholder='abc@example.com'
-					/>
+					<Field name='email' className={styles.input} placeholder='Email' />
 					<ErrorMessage name='email' className={styles.error} component='h3' />
 				</div>
 

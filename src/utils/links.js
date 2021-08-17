@@ -1,5 +1,9 @@
 export const navLinks = [
 	{
+		title: 'Home',
+		link: '/',
+	},
+	{
 		title: 'About',
 		link: '/about',
 	},
