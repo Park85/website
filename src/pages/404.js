@@ -13,7 +13,7 @@ const Error = props => {
 					fontFamily: "'Nunito', sans-serif",
 					marginBottom: '100px',
 				}}>
-				You seem lost! Go back to{' '}
+				You seem lost! <br /> Go back to{' '}
 				<Link to='/' style={{color: '#f3c701'}}>
 					Home
 				</Link>{' '}
