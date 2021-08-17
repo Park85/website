@@ -2,7 +2,7 @@ import React from 'react';
 import * as styles from './jumbotron.module.scss';
 import {StaticImage} from 'gatsby-plugin-image';
 import {Link} from 'react-scroll';
-const Video = React.forwardRef((_, ref) => {
+const Jumbotron = React.forwardRef((_, ref) => {
 	return (
 		<>
 			<StaticImage
@@ -29,4 +29,4 @@ const Video = React.forwardRef((_, ref) => {
 		</>
 	);
 });
-export default Video;
+export default Jumbotron;
