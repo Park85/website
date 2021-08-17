@@ -1,18 +1,16 @@
 import React from 'react';
-import * as styles from './video.module.scss';
+import * as styles from './jumbotron.module.scss';
 import {StaticImage} from 'gatsby-plugin-image';
 import {Link} from 'react-scroll';
 const Video = React.forwardRef((_, ref) => {
 	return (
 		<>
-			<div className={styles.thumbnailWrapper} style={{display: 'block'}}>
-				<StaticImage
-					src='../../assets/home-bg.jpg'
-					alt='home-bg'
-					placeholder='blurred'
-					className={styles.thumbnail}
-				/>
-			</div>
+			<StaticImage
+				src='../../assets/home-bg.jpg'
+				alt='home-bg'
+				placeholder='blurred'
+				className={styles.bg}
+			/>
 
 			<div id={styles.overlay} ref={ref}>
 				<header>

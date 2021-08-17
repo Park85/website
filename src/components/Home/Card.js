@@ -5,12 +5,7 @@ import {Link} from 'gatsby';
 import * as styles from './card.module.scss';
 const Card = ({data}) => {
 	return (
-		<Link
-			to={`/projects/${data.slug}`}
-			className={styles.projectCardContainer}
-			data-sal='slide-up'
-			data-sal-duration='800'
-			data-sal-easing='easeInCubic'>
+		<Link to={`/projects/${data.slug}`} className={styles.projectCardContainer}>
 			<div className={styles.imageWrapper}>
 				<GatsbyImage
 					image={getImage(data.thumbnail[0].optimizedThumbnails)}

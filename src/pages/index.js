@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import Layout from '../components/common/Layout';
 import Feedback from '../components/About/Feedback';
-import Video from '../components/Home/Video';
+import Jumbotron from '../components/Home/Jumbotron';
 import Testimonial from '../components/common/Testimonial';
 import Project from '../components/Home/Project';
 import useIntersection from '../hooks/useIntersection';
@@ -12,7 +12,7 @@ export default function Home() {
 
 	return (
 		<>
-			<Video youtubeId='bz45Dr-AokM' ref={containerRef} />
+			<Jumbotron ref={containerRef} />
 			<Layout
 				seoTitle='Home'
 				home={true}
@@ -22,7 +22,7 @@ export default function Home() {
 						<Project />
 					</div>
 				</div>
-				<div className={'bounding-box'}>
+				<div className='bounding-box'>
 					<Testimonial />
 				</div>
 
