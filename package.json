@@ -1,13 +1,12 @@
 {
-	"name": "gatsby-starter-hello-world",
+	"name": "park85",
 	"private": true,
-	"description": "A simplified bare-bones starter for Gatsby",
+	"description": "Landing page for a fictional real estate company",
 	"version": "0.1.0",
-	"license": "0BSD",
+	"license": "MIT",
 	"scripts": {
 		"build": "gatsby build",
 		"develop": "gatsby develop",
-		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
 		"start": "npm run develop",
 		"serve": "gatsby serve",
 		"clean": "gatsby clean",
@@ -38,19 +37,8 @@
 		"react-icons": "^4.2.0",
 		"react-scroll": "^1.8.2",
 		"react-slick": "0.28.1",
-		"react-youtube": "^7.13.1",
 		"sass": "^1.32.13",
 		"slick-carousel": "1.8.1",
 		"styled-components": "^5.3.0"
-	},
-	"devDependencies": {
-		"prettier": "2.2.1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-	},
-	"bugs": {
-		"url": "https://github.com/gatsbyjs/gatsby/issues"
 	}
 }
