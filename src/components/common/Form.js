@@ -1,96 +1,81 @@
 import React from 'react';
+import {Formik, Form as FormikForm, Field, ErrorMessage} from 'formik';
+import * as yup from 'yup';
 import * as styles from './form.module.scss';
-import {useFormik} from 'formik';
 
 const Form = () => {
-	const regem = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	const formik = useFormik({
-		initialValues: {
-			name: '',
-			email: '',
-			message: '',
-		},
-		onSubmit: values => {
-			console.log('Form data', values);
-		},
-		validate: values => {
-			let errors = {};
+	const initialValues = {
+		name: '',
+		email: '',
+		message: '',
+	};
 
-			if (!values.name) {
-				console.log('I hear name change');
-				errors.name = 'Name cannot be empty !';
-			}
-			if (!values.email) {
-				errors.email = 'Email cannot be empty !';
-			} else if (regem.test(values.email) === false) {
-				errors.email = 'Invalid email!';
-			}
-			if (!values.message || values.message === ' ') {
-				errors.message = 'Message cannot be empty !';
-			}
-
-			return errors;
-		},
+	const validationSchema = yup.object({
+		name: yup.string().trim().required('Name cannot be empty!'),
+		email: yup
+			.string()
+			.trim()
+			.email('Invalid Email!')
+			.required('Email cannot be empty!'),
+		message: yup.string().trim().required('Message cannot be empty!'),
 	});
 
-	// console.log('Errors ', formik.errors);
+	const handleSubmit = (values, actions) => {
+		console.log(
+			'Submitting the form will not have any effect as this is a demp app.'
+		);
+		console.log('Form Values', values);
+		actions.resetForm({
+			values: {
+				...initialValues,
+			},
+		});
+	};
+
 	return (
-		<form onSubmit={formik.handleSubmit} method='post' className={styles.form}>
-			<div className={styles.inputWrapper} id={styles.name}>
-				<input
-					type='text'
-					placeholder='Name'
-					className={styles.input}
-					name='name'
-					autoComplete='off'
-					onChange={formik.handleChange}
-					onBlur={formik.handleBlur}
-					value={formik.values.name}
-				/>
-				{formik.touched.name && formik.errors.name ? (
-					<h3 className={styles.error}>{formik.errors.name}</h3>
-				) : null}
-			</div>
+		<Formik
+			initialValues={initialValues}
+			validationSchema={validationSchema}
+			onSubmit={handleSubmit}>
+			<FormikForm autoComplete='off' className={styles.form}>
+				<div className={styles.inputWrapper} id={styles.name}>
+					<Field name='name' className={styles.input} placeholder='John Doe' />
+					<ErrorMessage name='name' className={styles.error} component='h3' />
+				</div>
 
-			<div className={styles.inputWrapper} id={styles.email}>
-				<input
-					type='text'
-					placeholder='Email'
-					className={styles.input}
-					name='email'
-					autoComplete='off'
-					onChange={formik.handleChange}
-					onBlur={formik.handleBlur}
-					value={formik.values.email}
-				/>
-				{formik.touched.email && formik.errors.email ? (
-					<h3 className={styles.error}>{formik.errors.email}</h3>
-				) : null}
-			</div>
+				<div className={styles.inputWrapper} id={styles.email}>
+					<Field
+						name='email'
+						className={styles.input}
+						placeholder='abc@example.com'
+					/>
+					<ErrorMessage name='email' className={styles.error} component='h3' />
+				</div>
 
-			<div className={styles.inputWrapper} id={styles.message}>
-				<textarea
-					className={styles.input}
-					cols='40'
-					rows='5'
-					placeholder='Message'
-					autoComplete='off'
-					name='message'
-					onChange={formik.handleChange}
-					onBlur={formik.handleBlur}
-					value={formik.values.message}></textarea>
-				{formik.touched.message && formik.errors.message ? (
-					<h3 className={styles.error}>{formik.errors.message}</h3>
-				) : null}
-			</div>
+				<div className={styles.inputWrapper} id={styles.message}>
+					<Field
+						as='textarea'
+						cols='40'
+						rows='5'
+						name='message'
+						className={styles.input}
+						placeholder='Your message goes here'
+					/>
+					<ErrorMessage
+						name='message'
+						className={styles.error}
+						component='h3'
+					/>
+				</div>
 
-			<input
-				type='submit'
-				title='Submit'
-				className={styles.button}
-				style={{gridArea: 'button', justifySelf: 'start'}}
-			/>
-		</form>
+				<button
+					type='submit'
+					className={styles.button}
+					style={{gridArea: 'button', justifySelf: 'start'}}>
+					Submit
+				</button>
+			</FormikForm>
+		</Formik>
 	);
 };
 

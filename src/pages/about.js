@@ -16,7 +16,7 @@ const About = props => {
 			description='Atri group about page'
 			activateScrolledNavbar={activateScrolledNavbar}>
 			<HeaderImage title='About Us' url={props.uri} ref={containerRef} />
-			<div className={'bounding-box'}>
+			<div className='bounding-box'>
 				<Intro />
 				<Whyus />
 				<Testimonial />

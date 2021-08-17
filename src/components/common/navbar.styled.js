@@ -35,7 +35,7 @@ export const BoundingBox = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 1.4em;
-	max-width: 1400px;
+	max-width: 1350px;
 	margin: 0 auto;
 `;
 
@@ -43,7 +43,7 @@ export const ListContainer = styled.ul`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 48%;
+	width: 33%;
 
 	${props =>
 		props.navOpen &&
@@ -62,7 +62,7 @@ export const ListContainer = styled.ul`
 	`}
 
 	@media (max-width: 1100px) {
-		width: 65%;
+		width: 40%;
 	}
 	@media (max-width: 890px) {
 		display: none;
