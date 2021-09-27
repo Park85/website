@@ -10,7 +10,7 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: 'Park 85',
-    description: 'Park 85. Developing Lifestyle',
+    description: 'Park 85. Developing Lifestyle'
   },
   plugins: [
     {
@@ -26,11 +26,11 @@ module.exports = {
         disabledClassName: 'sal-disabled', // Class name which defines the disabled state
         rootMargin: '0% 20%', // Corresponds to root's bounding box margin
         enterEventName: 'sal:in', // Enter event name
-        exitEventName: 'sal:out', // Exit event name
-      },
+        exitEventName: 'sal:out' // Exit event name
+      }
     },
     {
-      resolve: 'gatsby-plugin-sass',
+      resolve: 'gatsby-plugin-sass'
       // options: {
       // 	data: '@import `${__dirname}/src/styles/styles`',
       // },
@@ -39,8 +39,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
-        path: `${__dirname}/src/assets/`,
-      },
+        path: `${__dirname}/src/assets/`
+      }
     },
     {
       resolve: `gatsby-plugin-webfonts`,
@@ -49,19 +49,19 @@ module.exports = {
           google: [
             {
               family: 'Poppins',
-              variants: ['300', '400', '500'],
+              variants: ['300', '400', '500']
             },
             {
               family: 'Nunito',
-              variants: ['600', '700'],
+              variants: ['600', '700']
             },
             {
               family: 'Sacramento',
-              variants: ['400'],
-            },
-          ],
-        },
-      },
+              variants: ['400']
+            }
+          ]
+        }
+      }
     },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
@@ -72,11 +72,11 @@ module.exports = {
       options: {
         projectId: 'iif5n29v',
         dataset: 'production',
-        token: process.env.SANITY_ACCESS_TOKEN,
-      },
+        token: process.env.SANITY_ACCESS_TOKEN
+      }
     },
     {
-      resolve: `gatsby-plugin-styled-components`,
-    },
-  ],
+      resolve: `gatsby-plugin-styled-components`
+    }
+  ]
 };

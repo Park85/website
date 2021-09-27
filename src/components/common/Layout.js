@@ -7,20 +7,20 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const Layout = ({
-	children,
-	seoTitle,
-	description,
-	home,
-	activateScrolledNavbar,
+  children,
+  seoTitle,
+  description,
+  home,
+  activateScrolledNavbar
 }) => {
-	return (
-		<>
-			<Seo seoTitle={seoTitle} description={description} />
-			<Nav home={home} activateScrolledNavbar={activateScrolledNavbar} />
-			{children}
-			<Footer />
-		</>
-	);
+  return (
+    <>
+      <Seo seoTitle={seoTitle} description={description} />
+      <Nav home={home} activateScrolledNavbar={activateScrolledNavbar} />
+      {children}
+      <Footer />
+    </>
+  );
 };
 
 export default Layout;
