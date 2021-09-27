@@ -29,7 +29,7 @@ const Navbar = ({ home, activateScrolledNavbar }) => {
     <Nav scrolled={activateScrolledNavbar} home={home}>
       <BoundingBox>
         <Link to='/'>
-          <h1 style={{ color: '#f3c701' }}>park85</h1>
+          <h1 style={{ color: '#f3c701', fontFamily: 'Comfortaa' }}>park85</h1>
         </Link>
 
         <ListContainer
