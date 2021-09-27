@@ -58,6 +58,10 @@ module.exports = {
             {
               family: 'Sacramento',
               variants: ['400']
+            },
+            {
+              family: 'Comfortaa',
+              variants: ['700']
             }
           ]
         }
