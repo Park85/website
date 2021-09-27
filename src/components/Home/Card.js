@@ -16,7 +16,10 @@ const Card = ({ data }) => {
       </div>
       <h2 className={styles.projectName}>{data.title}</h2>
       <div className={styles.projLocDiv}>
-        <IoLocationOutline style={{ marginRight: '5px', color: '#24324a' }} size={20} />
+        <IoLocationOutline
+          style={{ marginRight: '5px', color: '#24324a' }}
+          size={20}
+        />
         <h4 className={styles.location}>{data.location}</h4>
       </div>
       <div className={styles.projDetail}>
