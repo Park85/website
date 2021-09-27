@@ -29,12 +29,7 @@ const Navbar = ({ home, activateScrolledNavbar }) => {
     <Nav scrolled={activateScrolledNavbar} home={home}>
       <BoundingBox>
         <Link to='/'>
-          <StaticImage
-            src='../../assets/logo_modified.png'
-            alt='logo'
-            width={70}
-            placeholder='blurred'
-          />
+          <h1 style={{ color: '#f3c701', fontFamily: 'Comfortaa' }}>park85</h1>
         </Link>
 
         <ListContainer
